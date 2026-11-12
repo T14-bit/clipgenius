@@ -1,0 +1,17 @@
+{
+  "name": "clipgenius-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Turn long videos into short, captioned vertical clips.",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node scripts/check.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

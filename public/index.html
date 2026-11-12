@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipGenius AI</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="top">
+  <h1>ClipGenius AI</h1>
+  <div id="acct" class="acct" hidden>
+    <span id="health" class="health" role="status"></span>
+    <button id="credits" class="chip" title="See plans and credit packs"></button>
+    <button id="manage" hidden>Manage billing</button>
+    <button id="logout">Log out</button>
+  </div>
+</header>
+
+<main id="auth" hidden>
+  <section class="authbox" aria-labelledby="auth-h">
+    <h2 id="auth-h">Log in to ClipGenius</h2>
+    <form id="authform" novalidate>
+      <label>Email <input type="email" id="email" autocomplete="email" required></label>
+      <label>Password <input type="password" id="password" autocomplete="current-password" minlength="8" required></label>
+      <button class="primary" id="authgo" style="margin-left:0">Log in</button>
+      <p id="authmsg" class="msg" role="alert"></p>
+    </form>
+    <p class="swap"><span id="swaptext">New here?</span> <button type="button" id="swap" class="link">Create an account</button></p>
+    <p class="fine">Every new account starts with free credits. 1 credit = 1 minute of uploaded video.</p>
+  </section>
+</main>
+
+<main id="app" hidden>
+  <p id="banner" class="banner" role="status" hidden></p>
+
+  <section id="plans" hidden aria-labelledby="plans-h">
+    <h2 id="plans-h">Plans and credits</h2>
+    <div id="plangrid" class="plans"></div>
+    <p class="fine" id="plannote"></p>
+  </section>
+
+  <section class="uploader" aria-labelledby="up-h">
+    <h2 id="up-h">Turn a long video into clips</h2>
+    <label class="drop" id="drop" tabindex="0">
+      <input type="file" id="file" accept=".mp4,.mov,.webm,.mkv,.m4v,video/*">
+      <strong id="drop-title">Choose a video or drag it here</strong>
+      <span id="drop-sub">MP4, MOV, WEBM, MKV or M4V</span>
+    </label>
+    <div class="opts">
+      <label>Clips <input type="number" id="clipCount" min="1" max="20" value="6"></label>
+      <label>Shortest (sec) <input type="number" id="minLen" min="10" max="120" value="20"></label>
+      <label>Longest (sec) <input type="number" id="maxLen" min="15" max="180" value="60"></label>
+      <button id="go" class="primary" disabled>Find my clips</button>
+    </div>
+    <p id="upmsg" class="msg" role="alert"></p>
+  </section>
+
+  <section>
+    <h2>Your videos</h2>
+    <div id="list" class="list"><p class="empty">Nothing here yet. Upload a video to get started.</p></div>
+  </section>
+
+  <section id="detail" hidden></section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
